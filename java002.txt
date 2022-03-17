@@ -1,0 +1,547 @@
+Encaptulation
+	Mixture of fields and methods.
+	
+	Data Binding
+	
+	
+	
+	class
+		fields
+		methods
+
+class Account {
+	private int acc_id;
+	private String name;
+	
+	public void setAccountID(int acc_id) {
+		this.acc_id = acc_id;
+	}
+	
+	
+}
+
+
+balance = 10000;
+amount = 14000;
+
+balance = balance - amount;
+
+balance = 10000 - 14000
+        = -4000
+
+Abstraction
+	We know there is something.
+	We dont know what is that?
+
+1. abstract  classes === > 0%  to 100% abstraction
+
+	1. abstract method ==> the method without the body.
+	
+	2. if a class is defined with atleast one abstract method, that class can be called as an abstract class.
+	
+	3. We should not create any object for an abstract class. 
+	
+	4. Abstract class must be a base class.
+	
+	5. There must be atleast one derived class for an abstract class.
+	
+	6. In derived class(es) we must overide the abstract method(s) of the abstract class.
+	
+	
+	
+
+2. interfaces ===> 100% abstraction
+
+
+
+sh1.draw();
+
+public abstract class Shape {
+	.
+	.
+	.
+	.
+	
+	public abstract void area();
+	
+	public void hello() {
+		s.o.p("Hello");
+	}
+
+}
+
+
+Shape s = new Shape(); ==> this is an error because we cannot create object for abstract class.
+
+s.hello();
+
+s.area(); 
+
+class Circle extends Shape {
+
+	.
+	.
+	.
+	.
+	
+	@Overide
+	public void area() {
+		double area = Math.PI * r * r;
+	}
+}
+
+class Rectangle extends Shape {
+
+	.
+	.
+	.
+	.
+	
+	@Overide
+	public void area() {
+		double area = l * w;
+	}
+}
+
+
+=============================
+Overloading
+	Same method with different parameters(no of parameters and type of parameters)
+	
+	Compiler takes care about method overloading.
+
+	If count of parameters is same, then type of parameters should be changed. 
+
+	You can write overloading methods inside the same class, or in derived class.
+	
+	It is static polymarphism.
+	
+	
+	
+	public class Calculator {
+		public int add(int n1, int n2) { // 2 parameters
+			return n1 + n2;
+		}
+		
+		public int add(int n1, int n2, int n3) { // 3 parameters
+			return n1 + n2 + n3;
+		}
+		
+		public double add(double n1, double n2) { // 2 			
+									parameters , type is double
+		return n1 + n2;
+	}
+		
+		p.v.s.m(..) {
+			Calculator c1 = new Calculator();
+			
+			s.o.p("Sum = " + c1.add(10,20));
+			s.o.p("Sum = " + c1.add(10,20,30));
+		}
+	}
+	
+	
+	
+Overriding
+	If the method with same parameters, again if you write in derived class, then it is called overriding a method.
+	
+	Use  @Override to specify that you are overriding a method.
+	
+	Method in base class only you can override in derived class.
+	
+	It is dynamic polymarphism.
+	
+
+
+
+
+===============================
+
+Use of this 
+
+	1. this is keyword
+
+	2. this is used to refer current class's instance.
+	
+	3. when you call this() method, this line should be first line in that method.
+	
+	4. this() can be called to invoke current class constructor(s). 
+	
+	5. A method in the class can return this.
+	
+	6. To refer static member field, you can use this.
+	
+	
+	
+
+Use of super keyword
+	1. super is a keyword
+	
+	2. Whenever you want to refer base class fields, methods, constructors you will be using super.
+	
+this() and super() cannot be called at once inside a method or constructor.
+
+But you can eighther of this() or super(). 
+
+
+Static Binding
+	
+Dynamic Binding
+	
+=======================
+Wrapper Classes
+	Primitive   =========== Wrapper Class
+	1. boolean              1. Boolean
+	
+	2. byte                 2. Byte
+	
+	3. char                 3. Character
+	
+	4. float                4. Float
+	
+	5. int                  5. Integer
+	
+	6. long                 6. Long
+	
+	7. short                7. Short
+	
+	8. double               8. Double
+	
+	Wrapper classes wraps a corresponding primitive types.
+	
+	Character ch = 'L';
+	
+	Integer n = 123;
+	
+	WC = PT
+	
+	
+	
+	
+Boxing and un-boxing
+
+Boxing :- Automatic conversion that the java compiler makes between the primitive type and their corresponding object wrapper class.
+
+int n=123;
+
+Integer v = n;
+
+Un-boxing:- If the conversion goes from wrapper class object to primitive type.
+
+Integer  a = 100;
+
+int n2 = a;
+
+
+
+
+Object class in java class library.
+	Whenever we create a class , our class automatically inherits from the Object class.
+	
+	
+
+
+
+Garbage Collection
+	1. Java garbage collection is the process of which java programs perform automatic memory management.
+	
+	2. As programmers we cant destruct the memory allocated for the objects.
+	
+	3. The garbage collector will always look at our program to collect the un-used objects.
+	
+	4. The java garbage collection is an automatic process.
+	
+	5. The garbage collection implementation lives in the JVM.
+	
+	
+
+
+Finalize
+	1. finalize() is the method of Object class.
+	
+	2. You can override finalize() of object class.
+	
+	3. Once if you override finalize() method, and if you call System.gc(), now finalize() method will be executed automatically.
+	
+	4. finalize() method will be called by the garbage collector just before the ojbect will get deleted.
+
+Garbage collection is the procedure of automatically recovering the unused runtime memory. The process getsridofall unwanted objects. Garbage collection occurs during a program life cycle, effectively minimizing the necessityofmemory de-allocation. This process helps to reduce memory leak possibilities. De-allocating memory alsoreducesthechances of programs crashing.
+
+
+	
+
+Difference between final, finally and finalize
+
+
+
+======================================================
+Working with packages in java
+
+What is the package in java?
+	1. Packages are used in java in order to prevent naming conflicts.
+	
+	2. A package can be defined as a grouping of related types(class, interface, enumeration, annotation and sub package).
+	
+	3. Types of packages
+		1. built-in packages
+			They are already created in the java librabry
+			
+			java.util.Scanner; ==> java.util is the package, Scanner is the class
+			
+			java.lang
+			
+			
+		2. user defined packages
+			The packages are defined by programmers are nothing but user defined packages.
+	
+	4. Think package like your folder in a file directory.
+	
+	com.test.demo ==> 
+		1. com is a folder here.
+		2. test is a child folder of com.(com/test)
+		3. demo is a child folder of test. (com/test/demo)
+		
+Advantages Packages
+
+	1. Java package is used to categorise the classes and interfaces so that they can be easily maintained.
+	
+	2. Java package provides access protection.
+	
+	3. Java package removes naming collision.
+		com.first_package.demo.Product
+		
+		com.second_package.demo.Product
+		
+		These two classes are different but with same name.
+		
+	
+
+Creating a package.
+		javac -d . Car.java
+		
+		-d ==> create the directories
+		. ==> create the directories from current folder
+		
+	../package-demo/Car.java
+	
+	../package-demo/com/packages/demo/Car.class
+	
+	package com.packages.demo;
+		this means the compiler will create the folder structure as shown below
+		../com/packages/demo
+	 
+	
+Importing package.
+
+import com.packages.demo.Car;
+
+
+Static import of package.
+===========================================================
+
+String(Immutable string).
+
+	String is a series of characters.
+	
+	A string in java is an immutable object.
+	
+	Immutable means a constant.
+	
+	Once you define a constant you cannot change its value in later.
+	
+	A string once created cannot be changed.
+	
+	s = "Hello"; ===> memory location is 172
+	
+	s = s + " World"; ===> this string will not occupy the same location(172)
+	                  ===> this will occupy a different memory location(192)
+	
+	If the string is already exists, the jvm returns a reference to the existing instance.
+	
+	If you change any string value it will not any error eventhough it is immutable(constant).
+
+	
+	
+	There are two ways to create a string.
+		1. String literal
+			String s1 = "Hello";
+			
+			String s2 = "Hello";
+			
+			If the string is already exists, the jvm returns a reference to the existing instance.
+		
+		2. new keyword
+		
+			String s1 = new String("Hello");
+			
+			String s1 = new String("Hello");
+			
+			Here, it will be separate two instances(s1 and s2).
+
+String s1 = "JAVA";
+String s2 = "JAVA";
+
+s1 = s1 + "J2EE";
+
+
+Mutable String
+	1. Mutable string in java enables the modification of characters with in a string.
+	
+	2. Through mutable string , a programmer can do insertion, adding, removing  strings.
+	
+	3. To make a string into mutable, programmer should use StringBuffer or StringBuilder.
+	
+StringBuffer
+	1. This class is used to create a mutable string.
+	
+	2. StringBuffer class is like String class, StringBuffer is  mutable.
+	
+	3. stringBuffer methods cannot be called simultaneously by more than one thread. It is thus considered as thread safe.
+
+StringBuilder
+	1. This class is used to create a mutable string.
+	
+	2. StringBuilder class is like String class, StringBuilder is  mutable.
+	
+	3. stringBuilder methods can be called simultaneously by multiple threads. Hence, it is not thread safe.
+
+StringBuffer and StringBuilder object occupy 16 locatioins by default;
+
+StringBuffer sb = new StringBuffer();
+
+sb.length();
+sb.capacity();
+
+===================================
+
+StringTokenizer
+	1. This class allows you to break a string into tokens(different parts).
+	
+	StringTokenizer st = new StringTokenizer("Hello Friends. Where are you?");
+	
+	Hello
+	Friends.
+	Where
+	are
+	you?
+
+	2. You can specify the delimiter.
+	
+	StringTokenizer st = new StringTokenizer("Hello Friends. Where are you?", ".");	
+	delimiter == '.'
+	Hello Friends
+	 Where are you?
+	 
+
+
+======================================
+Arrays
+	Through an array you can store n number of values in a variable.
+	
+	int n=10;
+	n=12;
+	
+	<data-type> <variable-name>[] = new <data-type>[n];
+	
+	int nums[] = new int[5];
+	
+	Arrays are called indexed variables.
+	
+	nums[0] = 10;
+	nums[1] = 20;
+	nums[2] = 30;
+	nums[3] = 40;
+	nums[4] = 50;
+	
+	Index of an array will always starts with 0 and ends with Size-1;
+	
+	int n1, n2, n3, n4, n5, n6, ....................., n98, n99, n100;
+	
+	int nums[] = new int[100];
+	
+	n1 = sc.nextInt();
+	n2 = sc.nextInt();
+	
+	n3 = sc.nextInt();
+	
+	.
+	.
+	.
+	.
+	.
+	n99 = sc.nextInt();
+	n100 = sc.nextInt();
+	
+	
+	for(int i=0; i<100; i++)
+		nums[i] = sc.nextInt();
+	
+	int sum = 0;
+	sum = n1 + n2 + n3 + ...............................+n99 + n100;
+	
+	for(int i=0; i<100; i++) {
+		sum = sum + nums[i];
+	}
+	
+
+Searching
+
+
+Sorting
+
+int nums[] = {3, 60, 35, 2, 45, 320, 5 }
+
+           = {2, 3, 5, 35, 45, 60, 320 }
+
+for(int i=0; i<nums.length; i++) {
+	for(int j=i+1;j<nums.length; j++) {
+		if(nums[i] > nums[j]) {
+		int t = nums[i];
+		nums[i] = nums[j];
+		
+		nums[j] = t;
+		}
+	}
+}
+===========================================
+Collections and generics
+
+Collections came into java from 1.2 version.
+
+
+Collections are there because there are lot of disadvantages with the arrays.
+
+Limitations of Arrays
+	1. They cannot dynamically grow or shrink
+	
+		int n[] = new int[5];
+	
+		We cannot chage the size(5) dynamically
+		
+	2. Implementing efficient , complex data structures from scratch would be difficult.
+
+Collections and Generics
+
+	1. The java collection framework is a set of classes and interfaces implementing complex data structures.
+	
+	2. A collection is an object that represents a group of objects.
+	
+	3. The java collection framework provides the following benifits
+		1. Reduces programming effort.
+		2. Increases the performance
+		3. Promotes software re-use.
+		4. Easy to design APIs based on generic collections.
+		
+	4. The collections framework consists of
+		1. Interfaces
+			Collection, List, Set, Map etc
+			
+		2. Classes inherits from interfaces.
+			ArrayList, LinkedList, HashSet, HashMap etc
+			
+	
+	
+
+
+
+
