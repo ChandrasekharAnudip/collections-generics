@@ -60,7 +60,7 @@ public class Book  implements Comparable<Book> {
 	@Override
 	public int compareTo(Book b) {
 		
-		
+		/*
 		if(bookid > b.bookid) {
 			return 1;
 		}
@@ -70,13 +70,13 @@ public class Book  implements Comparable<Book> {
 		else {
 			return 0;
 		}
-		
+		*/
 		
 		/*
-		if(quantity >= b.quantity) {
+		if(quantity > b.quantity) {
 			return 1;
 		}
-		else if(quantity <= b.quantity) {
+		else if(quantity < b.quantity) {
 			return -1;
 		}
 		else{
@@ -84,7 +84,7 @@ public class Book  implements Comparable<Book> {
 		}
 		*/
 		
-		//return name.compareTo(b.name);
+		return name.compareTo(b.name);
 		
 		/*
 		if(quantity >= b.quantity) {

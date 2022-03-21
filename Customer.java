@@ -64,11 +64,14 @@ public class Customer  implements Comparable<Customer> {
 	
 	@Override
 	public int compareTo(Customer cust){  
+		/*
 		if(age==cust.age)  
 			return 0;  
 		else if(age>cust.age)  
 			return 1;  
 		else  
-			return -1;  
+			return -1;*/
+		
+		return name.compareTo(cust.name);
 	} 
 }
